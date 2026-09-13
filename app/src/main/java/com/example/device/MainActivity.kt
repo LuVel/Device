@@ -13,7 +13,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import com.example.device.data.Constants
+import com.example.device.data.Device
+import com.example.device.network.DeviceService
 import com.example.device.ui.theme.DeviceTheme
+import com.example.device.views.MainView
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -29,14 +33,16 @@ class MainActivity : ComponentActivity() {
                     devices = result
                 }
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainView(Modifier.padding(innerPadding),
-                        devices = devices)
+                    MainView(
+                        Modifier.padding(innerPadding),
+                        devices = devices
+                    )
                 }
             }
         }
     }
 
-    //Función de orden superior o de alto orden
+    //Función de orden superior o de alto orden parte del MV
     private fun getDevice(onResult: (List<Device>) -> Unit){
         val retrofit = Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)

@@ -1,4 +1,4 @@
-package com.example.device
+package com.example.device.data
 
 data class Device(
     val id: Long,

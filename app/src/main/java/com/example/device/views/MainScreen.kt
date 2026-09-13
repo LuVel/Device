@@ -1,4 +1,4 @@
-package com.example.device
+package com.example.device.views
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.device.data.Device
+import com.example.device.data.Specs
 import com.example.device.ui.theme.DeviceTheme
 import com.example.device.ui.theme.Typography
 
